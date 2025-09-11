@@ -1,0 +1,260 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+  .banner {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .banner img {
+    width: 100%;
+    height: 200px; /* Set fixed small height */
+    object-fit: cover; /* Crop the image neatly */
+    display: block;
+  }
+
+  .projects {
+    margin: 30px 20px;
+  }
+
+  .projects h2 {
+    color: #2e2eff; /* Blue heading */
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .projects hr {
+    border: none;
+    border-top: 3px solid orange;
+    width: 100%;
+  }
+    .card {
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-img-top {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    object-fit: cover;
+    height: 180px;
+  }
+
+  .btn {
+    border-radius: 20px;
+    padding: 5px 15px;
+  }
+</style>
+
+
+<!-- Banner Section -->
+<div class="banner">
+  <img src="{% static 'clinton/images/Statistics.jpg' %}" alt="Banner" />
+</div>
+
+<!-- Projects Section -->
+<section class="projects">
+  <h2>Projects</h2>
+  <hr>
+</section>
+
+
+<!-- Why Choose Section -->
+<div class="container my-5">
+  <div class="row align-items-center">
+    <!-- Left Column -->
+    <div class="col-md-6">
+      <h2 style="color: blue; font-weight: bold;">
+        Why Choose <span style="color: purple;">Clinton!</span>
+      </h2>
+      <p>
+        He is Backed by years of experience and high-quality to ensure efficient and reliable services.
+      </p>
+      <p>
+        Continues to provide customized solutions at competitive innovations, tailored to meet the unique needs of your location.
+      </p>
+    </div>
+
+    <!-- Right Column (Accordion) -->
+    <div class="col-md-6">
+      <div class="accordion" id="whyChooseAccordion">
+
+        <!-- Expertise -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Expertise
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#whyChooseAccordion">
+            <div class="accordion-body">
+              With years of experience, I understand the complexities of technology, ensuring efficient and effective water access.
+            </div>
+          </div>
+        </div>
+
+        <!-- Sustainability -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Sustainability
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#whyChooseAccordion">
+            <div class="accordion-body">
+              We prioritize sustainable solutions that meet current needs without compromising future generations.
+            </div>
+          </div>
+        </div>
+
+        <!-- Turnkey Solutions -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Turnkey Solutions
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#whyChooseAccordion">
+            <div class="accordion-body">
+              From planning to execution, we provide complete turnkey solutions for your projects.
+            </div>
+          </div>
+        </div>
+
+        <!-- Availability -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Availability
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+            data-bs-parent="#whyChooseAccordion">
+            <div class="accordion-body">
+              We are available when you need us, ensuring timely and reliable services.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!---div class="row row-cols-1 row-cols-md-3 g-4"-->
+  <!-- Project 1 -->
+  <!---div class="col">
+    <div class="card h-100 shadow-sm border-0">
+      <img src="{% static 'clinton/images/Statistics.jpg' %}" class="card-img-top" alt="Project 1">
+      <div class="card-body text-center">
+        <h5 class="card-title">Project 1</h5>
+        <p class="card-text">A short description of this project.</p>
+        <div class="d-flex justify-content-center gap-2">
+          <a href="#" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>
+          <a href="#" target="_blank" class="btn btn-dark btn-sm">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div---->
+
+  <!-- Project 2 -->
+  <!------div class="col">
+    <div class="card h-100 shadow-sm border-0">
+      <img src="{% static 'clinton/images/Statistics.jpg' %}" class="card-img-top" alt="Project 2">
+      <div class="card-body text-center">
+        <h5 class="card-title">Project 2</h5>
+        <p class="card-text">A short description of this project.</p>
+        <div class="d-flex justify-content-center gap-2">
+          <a href="#" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>
+          <a href="#" target="_blank" class="btn btn-dark btn-sm">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div---->
+
+  <!-- Project 3 -->
+  <!----div class="col">
+    <div class="card h-100 shadow-sm border-0">
+      <img src="{% static 'clinton/images/Statistics.jpg' %}" class="card-img-top" alt="Project 3">
+      <div class="card-body text-center">
+        <h5 class="card-title">Project 3</h5>
+        <p class="card-text">A short description of this project.</p>
+        <div class="d-flex justify-content-center gap-2">
+          <a href="#" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>
+          <a href="#" target="_blank" class="btn btn-dark btn-sm">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div------->
+<h1>Project will be uploaded later. Thanks for the understanding!</h1>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4" style="background: linear-gradient(90deg, #6a11cb, #2575fc); background-clip: text;
+-webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      Let's Work Together
+    </h2>
+    <p class="mb-5">
+      Partner with me to bring your next project to life. I’ll combine creativity and expertise to turn your vision into reality!
+    </p>
+
+    <div class="row g-4 mb-4">
+      <!-- Address -->
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded">
+          <i class="bi bi-house-door-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc);background-clip: text;
+ -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+          <h5 class="mt-3">My Address</h5>
+          <p>Nairobi, Kenya</p>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded">
+          <i class="bi bi-telephone-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc);background-clip: text;
+ -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+          <h5 class="mt-3">Give Me a Call</h5>
+          <p>+254 700 387 730</p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded">
+          <i class="bi bi-envelope-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc); background-clip: text;
+-webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+          <h5 class="mt-3">Send Me an Email</h5>
+          <p>clintontech2000@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Me Button -->
+    <a href="https://wa.me/254700387730" target="_blank" class="btn btn-lg text-white" style="background: linear-gradient(90deg, #6a11cb, #2575fc); border: none;">
+      Chat Me
+    </a>
+  </div>
+</section>
+
+
+{% endblock %}

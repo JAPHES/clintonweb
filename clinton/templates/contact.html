@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Contact Section -->
+<section class="container my-5">
+    <h2 class="mb-4 text-center">Get In Touch!</h2>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <form id="contact-form" class="row g-3">
+                <!-- Name -->
+                <div class="col-md-6">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <!-- Email -->
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="your@email.com" required>
+                </div>
+                <!-- Phone -->
+                <div class="col-md-6">
+                    <label for="number" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="number" placeholder="07XXXXXXXX"
+                        pattern="[0-9]{10}" maxlength="10" required>
+                </div>
+                <!-- Message -->
+                <div class="col-12">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Write your message..." required></textarea>
+                </div>
+                <!-- Submit -->
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4" style="background: linear-gradient(90deg, #6a11cb, #2575fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      Let's Work Together
+    </h2>
+    <p class="mb-5">
+      Partner with me to bring your next project to life. I’ll combine creativity and expertise to turn your vision into reality!
+    </p>
+
+    <div class="row g-4 mb-4">
+      <!-- Address -->
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded">
+          <i class="bi bi-house-door-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+          <h5 class="mt-3">My Address</h5>
+          <p>Nairobi, Kenya</p>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded">
+          <i class="bi bi-telephone-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+          <h5 class="mt-3">Give Me a Call</h5>
+          <p>+254 700 387 730</p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded">
+          <i class="bi bi-envelope-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+          <h5 class="mt-3">Send Me an Email</h5>
+          <p>marvinmawira8@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Me Button -->
+    <a href="https://wa.me/254799989801" target="_blank" class="btn btn-lg text-white" style="background: linear-gradient(90deg, #6a11cb, #2575fc); border: none;">
+      Chat Me
+    </a>
+  </div>
+</section>
+
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+    (function () {
+        emailjs.init("-bQN0xF9wje-lqXdg"); // Replace with your EmailJS Public Key
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        emailjs.send("service_831dpsq", "template_3ha39ld", {
+            from_name: document.getElementById("name").value,
+            from_email: document.getElementById("email").value,
+            phone_number: document.getElementById("number").value,
+            message: document.getElementById("message").value,
+        }).then(
+            function () {
+                alert("Message sent successfully!");
+                document.getElementById("contact-form").reset();
+            },
+            function (error) {
+                alert("Failed to send message. Please try again.");
+                console.log("Error:", error);
+            }
+        );
+    });
+</script>
+
+{% endblock %}

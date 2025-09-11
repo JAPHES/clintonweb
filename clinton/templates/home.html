@@ -1,0 +1,322 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+
+<!-- Custom CSS -->
+<style>
+  .service-card {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+  .counter-box {
+    background: #fff;
+    border-radius: 15px;
+    transition: 0.3s;
+  }
+  .counter-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+</style>
+<div class="container py-5">
+  <div class="row align-items-center">
+    <!-------------------------------------------------- Left Text Section -------------------------------------------------------->
+    <div class="col-lg-6 mb-4 mb-lg-0">
+      
+      <h5 class="fw-bold text-primary">Who am I?</h5>
+      <p>
+      Hi! I’m Clinton, a passionate Statistics professional with hands-on experience in analyzing data, building predictive models,
+       and transforming complex information into clear insights .
+      </p>
+      <p>I specialize in:<li>Statistical Analysis</li>
+                        <li>Predictive Modeling</li>
+                        <li>Data Visualization</li>
+                        <li>Business Intelligence</li>
+                        <li>Machine Learning and AI</li>
+      </p>
+      <p>
+      I thrive on solving real-world problems using data, and I'm continually learning new methods to improve my analytical capabilities. ✨
+      </p>
+      <div class="d-flex gap-3">
+        <a href="{% url 'projects' %}" class="btn btn-primary">
+          <i class="bi bi-send"></i> View Work
+        </a>
+        <a href="{% url 'contact' %}" class="btn btn-secondary">
+          <i class="bi bi-send"></i> Connect
+        </a>
+      </div>
+    </div>
+
+    <!-------------------------------------- Right Image Section ------------------------------------------------------------------------->
+    <div class="col-lg-6 text-center">
+     <img src="{% static 'clinton/images/Statistics.jpg' %}" alt="Graphic Work" class="img-fluid rounded shadow">
+
+    </div>
+  </div>
+</div>
+
+<!--------------------------------------------------------- What I Do Section ---------------------------------------------------------------------->
+<section class="py-5">
+  <div class="container text-center">
+    <!---------------------------------------------------------------------- Section Title ------------------------------------------------------------------------------------------------------------------>
+    <h2 class="fw-bold mb-4" style="background: linear-gradient(45deg, #1e90ff, #ff1493); -webkit-background-clip: text;background-clip: text;
+ -webkit-text-fill-color: transparent;">
+      What I Do
+    </h2>
+    <hr class="mx-auto mb-5" style="width: 60px; height: 3px; background-color: #f8c8dc; border: none;">
+
+    <!-- Cards -->
+    <div class="row g-4">
+      <!------------------------------------------------------------ Statistical Analysis --------------------------------------------------------------------------------------------->
+      <div class="col-md-4">
+        <div class="card shadow border-0 h-100 text-center p-4 service-card">
+          <div class="mb-3 text-warning fs-1">
+            <i class="bi bi-graph-up"></i>
+
+          </div>
+          <h5 class="fw-bold">Statistical Analysis</h5>
+          <p>I excel in Statistical Analysis, applying advanced methods to uncover patterns, trends, and actionable insights from data.</p>
+        </div>
+      </div>
+
+      <!---------------------------------------------------------- Data Visualization-------------------------------------------------------------------------------------------------- -->
+      <div class="col-md-4">
+        <div class="card shadow border-0 h-100 text-center p-4 service-card">
+          <div class="mb-3 text-danger fs-1">
+            <i class="bi bi-bar-chart"></i>
+
+          </div>
+          <h5 class="fw-bold">Data Visualization</h5>
+          <p>I specialize in Data Visualization, transforming complex datasets into clear, interactive, 
+            and insightful visuals that drive informed decision making.</p>
+        </div>
+      </div>
+
+      <!------------------------------------------------- Machine Learning $ AI -------------------------------------------------------------->
+      <div class="col-md-4">
+        <div class="card shadow border-0 h-100 text-center p-4 service-card">
+          <div class="mb-3 text-warning fs-1">
+            <i class="bi bi-robot"></i>
+
+          </div>
+          <h5 class="fw-bold">Machine Learning $ AI</h5>
+          <p>I work in Machine Learning and AI, building intelligent systems that learn from data to solve problems and enhance decision-making.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--------------------------------------------------- Counters ------------------------------------------------------------------------>
+    <div class="row mt-5 g-4">
+      <div class="col-md-3 col-6">
+        <div class="counter-box shadow-sm p-3 rounded">
+          <h3 class="text-danger fw-bold">1+</h3>
+          <p>Years Experience</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="counter-box shadow-sm p-3 rounded">
+          <h3 class="text-danger fw-bold">2+</h3>
+          <p>Programming Experience</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="counter-box shadow-sm p-3 rounded">
+          <h3 class="text-danger fw-bold">20+</h3>
+          <p>Completed Projects</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="counter-box shadow-sm p-3 rounded">
+          <h3 class="text-danger fw-bold">15+</h3>
+          <p>Clients Served</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!---------------------------------------------RESUME PART-------------------------------------------------------------------------------->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5" style="background: linear-gradient(45deg, #6a11cb, #ff4b2b);background-clip: text;
+ -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      My Resume
+    </h2>
+    <div class="row g-4">
+      
+      <!------------------------------------------------------- Expertise --------------------------------------------------------------------->
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-white p-2 rounded" style="background: linear-gradient(45deg, #6a11cb, #ff4b2b);">Expertise</h5>
+            
+            <p><strong>2022 - 2022</strong><br>Data Scientist Attache --- National Treasury, Nairobi, Kenya</p>
+            <p class="text-muted"><ul>Analyzed and tracked to prepare forecasts and identify trends</ul>
+                                  <ul>Evaluated new data analysis tools and technologies to keep the company ata the forefront from of industry</ul>
+                                <ul>Troubleshoot network and ensured everyone was connected to the internet for smooth running of the activities</ul>
+                              </p>
+            <hr>
+            <p><strong>2023 - 2023</strong><br>Financial Advisor --- CIC Group Ltd Nairobi, Kenya</p>
+            <p class="text-muted"><ul>Counselled clients on financial matters and provided recommendations on investment opportunities, products and services based 
+                                      on client's needs and asset availability</ul>
+                                  <ul>Analyzed financial data and prepared detailed report, offering clients clear insights
+                                     into their financial standing.</ul></p>
+            
+            <!------------------------------------------------------------------ Hidden content ----------------------------------------------------------------------------------------------------------------->
+            <div id="more-expertise" style="display: none;">
+              <hr>
+              <p><strong>2022 - 2023</strong><br>Freelancing</p>
+              <p class="text-muted"><ul>Utilized Machine learning algorithms to analyze trends and predictive models,
+                 contributing to informed business planning and strategy.</ul>
+                                    <ul>Collaborated with team regarding new projects and installations, utilizing
+                                       features to deliver faster service. </ul>
+                                  <ul>Created dashboards for my clients, which in return
+                                     improved sales as they got a better understanding of their sales data.</ul></p>
+              <hr>
+              <p><strong>2021 - 2022</strong><br>IT Support Specialist</p>
+              <p class="text-muted">Provided technical support, maintained systems, and implemented IT solutions to improve business processes.</p>
+            </div>
+            
+            <!------------------------------------------------------------------- Toggle Buttons ----------------------------------------------------------------->
+            <button class="btn btn-primary mt-3" id="showMoreBtn" onclick="showMore()">Show More</button>
+            <button class="btn btn-secondary mt-3" id="showLessBtn" onclick="showLess()" style="display: none;">Show Less</button>
+          </div>
+        </div>
+      </div>
+      
+      <!---------------------------------------------------------------------------- Education -------------------------------------------------------------------------------------------------------->
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-white p-2 rounded" style="background: linear-gradient(45deg, #6a11cb, #ff4b2b);">Education</h5>
+            
+            <p><strong>2019 - 2022</strong><br>BSC Applied Statistics with Computing</p>
+            <p class="text-muted">Comprehensive study of statistical methods, data analysis, probability, programming, and computational techniques, 
+              with applications in solving real-world problems.</p>
+            <hr>
+            <p><strong>2014 - 2018</strong><br>High School Degree</p>
+            <!-----------p class="text-muted">An initiative by eMobilis & Mastercard to empower developers in Africa with resources, 
+            training, and opportunities to build high-quality applications.</p>
+            <hr>
+            <p><strong>2015 - 2016</strong><br>High School Degree</p----------------->
+            <h5 class="card-title fw-bold text-white p-2 rounded mt-4" style="background: linear-gradient(45deg, #6a11cb, #ff4b2b);">Techniques</h5>
+            <ul class="list-unstyled">
+              <li>Hypothesis Testing</li>
+              <li>Regression</li>
+              <li>Classification</li>
+              <li>Clustering</li>
+              <li>Sampling</li>
+              <li>Forecasting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-------------------------------------------------------------- Tools & Skills --------------------------------------------------------------------->
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-white p-2 rounded" style="background: linear-gradient(45deg, #6a11cb, #ff4b2b);">Skills/Tools</h5>
+            
+            <p>SPSS</p>
+            <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 95%"></div></div>
+            
+            <p>R</p>
+            <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 80%"></div></div>
+            
+            <p>Python</p>
+            <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 75%"></div></div>
+            
+            <p>SQL</p>
+            <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 60%"></div></div>
+            
+            <p>Tableau</p>
+            <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 55%"></div></div>
+            
+            <p>Power BI</p>
+            <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 50%"></div></div>
+
+            <p>Excel (Advanced)</p>
+            <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 50%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4" style="background: linear-gradient(90deg, #6a11cb, #2575fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      Let's Work Together
+    </h2>
+    <p class="mb-5">
+      Partner with me to bring your next project to life. I’ll combine creativity and expertise to turn your vision into reality!
+    </p>
+
+    <div class="row g-4 mb-4">
+      <!-- Address -->
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded" style="background-color: aliceblue;">
+          <i class="bi bi-house-door-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+          <h5 class="mt-3">My Address</h5>
+          <p>Nairobi, Kenya</p>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded" style="background-color: aliceblue;">
+          <i class="bi bi-telephone-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+          <h5 class="mt-3">Give Me a Call</h5>
+          <p>+254 700 387 730</p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded" style="background-color: aliceblue;">
+          <i class="bi bi-envelope-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+          <h5 class="mt-3">Send Me an Email</h5>
+          <p>clintonmunene2000@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Me Button -->
+    <a href="https://wa.me/254700387730" target="_blank" class="btn btn-lg text-white" style="background: linear-gradient(90deg, #6a11cb, #2575fc); border: none;">
+      Whatsapp Me
+    </a>
+  </div>
+</section>
+
+
+<!-------------------------------------------------------------------- Show More / Show Less Script ------------------------------------------------------->
+<script>
+  function showMore() {
+    document.getElementById("more-expertise").style.display = "block";
+    document.getElementById("showMoreBtn").style.display = "none";
+    document.getElementById("showLessBtn").style.display = "inline-block";
+  }
+  function showLess() {
+    document.getElementById("more-expertise").style.display = "none";
+    document.getElementById("showMoreBtn").style.display = "inline-block";
+    document.getElementById("showLessBtn").style.display = "none";
+  }
+</script>
+
+
+
+<!-------------------------------------------------- Bootstrap Icons ------------------------------------------------------------------------------->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+<!------------------------------------------------------ Bootstrap Icons (for the buttons) ---------------------------------------------------------->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+{% endblock %}

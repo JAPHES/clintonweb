@@ -118,15 +118,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.2/howto/static-files/
+
 STATIC_URL = '/static/'
 
+# Tell Django where your static files live during development
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "clinton/static"),
-
 ]
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
-#whitenoise setting
+# Where collectstatic will put all files for production (Render serves from here)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Whitenoise setting for serving static files in production
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 

@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clintontech</title>
-    <!-- Bootstrap 5 -->
+    <!--------------------------------------------- Bootstrap 5 -------------------------------------------------------------->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Custom Navbar Styles -->
+    <!--------------------------------------------- Custom Navbar Styles -------------------------------------------------------->
 <style>
     .nav-custom {
-        font-size: 1.2rem; /* Bigger font for tabs */
+        font-size: 1.2rem; 
         font-weight: 600;
         background: linear-gradient(45deg, #ff4b2b, black, #cd3232);
         -webkit-background-clip: text;
@@ -24,20 +24,20 @@
         opacity: 0.8;
     }
 </style>
-    <!-- Navbar -->
+    <!--------------------------------------------------- Navbar ------------------------------------------------------------------------------------->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-        <!-- Brand -->
+        <!----------------------------------------------- Brand ----------------------------------------------------------------------------------->
         <a class="navbar-brand fw-bold fst-italic" href="{% url 'home' %}" style="font-size: 1.8rem;">
             Clinton Munene
         </a>
 
-        <!-- Toggler for mobile -->
+        <!----------------------------------------- Toggler for mobile ------------------------------------------------------------------------------->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Links -->
+        <!------------------------------------------------- Links ------------------------------------------------------------------------------>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
@@ -55,18 +55,18 @@
 </nav>
 
 
-    <!-- Page content -->
+    <!-------------------------------------------------------- Page content ---------------------------------------------------------------------->
     <main class="container my-5">
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer -->
+    <!--------------------------------------------------------- Footer ---------------------------------------------------------------------------->
 <footer class="bg-black text-white py-3 mt-auto">
   <div class="container d-flex justify-content-between align-items-center">
-    <!-- Left: Copyright -->
+    <!------------------------------------------------- Left: Copyright ---------------------------------------------------------------------------->
     <p class="mb-0">&copy; 2025 Clinton Munene. All Rights Reserved.</p>
 
-    <!-- Right: Social Media Icons -->
+    <!--------------------------------------- Right: Social Media Icons ---------------------------------------------------------------------------->
     <div class="d-flex gap-3">
       <a href="https://linkedin.com" target="_blank" class="text-white">
         <i class="bi bi-linkedin fs-5"></i>
@@ -90,7 +90,7 @@
   </div>
 </footer>
 
-<!-- Bootstrap Icons -->
+<!-- Bootstrap Icons $ js -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

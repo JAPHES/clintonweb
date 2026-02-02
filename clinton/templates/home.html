@@ -4,6 +4,7 @@
 
 <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
 
+
 <!-- Custom CSS -->
 <style>
   .service-card {
@@ -23,6 +24,20 @@
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   }
+  .cv-btn {
+  background: #0d6efd;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.cv-btn:hover {
+  background: #084298;
+}
+
+
+
 
   
 </style>
@@ -46,7 +61,7 @@
       I thrive on solving real-world problems using data, and I'm continually learning new methods to improve my analytical capabilities. ✨
       </p>
       <div class="d-flex gap-3">
-        <a href="{% url 'projects' %}" class="btn btn-primary">
+        <a href="{% url 'projects' %}" class="btn btn-secondary">
           <i class="bi bi-send"></i> View Work
         </a>
         <a href="{% url 'contact' %}" class="btn btn-secondary">
@@ -58,6 +73,10 @@
         <a href="https://www.linkedin.com/in/clinton-munene?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BNI165O56Sfmix1aMXz0o1g%3D%3D" class="btn btn-secondary">
           <i class="bi bi-send"></i> LinkedIn Profile
         </a>
+          <a href="{% static 'clinton/files/Clinton_CV.pdf' %}" download class="cv-btn">
+          Download CV
+          </a>
+
 
       </div>
     </div>
@@ -300,9 +319,10 @@
     </div>
 
     <!-- Chat Me Button -->
-    <a href="https://wa.me/254700387730" target="_blank" class="btn btn-lg text-white" style="background: linear-gradient(90deg, #6a11cb, #2575fc); border: none;">
+    <!--a href="https://wa.me/254700387730" target="_blank" class="btn btn-lg text-white" style="background: linear-gradient(90deg, #6a11cb, #2575fc); border: none;">
       Whatsapp Me
-    </a>
+    </a-->
+
   </div>
 </section>
 

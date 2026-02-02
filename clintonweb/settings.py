@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-!yt^ia))x0e#pmptvl)+u&+wb5ln#*p83t57@j0m8od(qh091n
 DEBUG = False
 #DEBUG = True
 
-ALLOWED_HOSTS = ['clintonweb.onrender.com']
+ALLOWED_HOSTS = ['clintonweb.onrender.com', 'localhost','127.0.0.1']
 
 
 # Application definition

@@ -58,7 +58,7 @@
 
 <!-------------------------------------------------------- Banner Section ---------------------------------------------------------------->
 <div class="banner">
-  <img src="{% static 'clinton/images/clinton2.jpg' %}" alt="Banner" />
+  <img src="{% static 'clinton/images/clinton2.jpg' %}" alt="Banner" decoding="async" />
 </div>
 
 <!------------------------------------------------------------------ Contact Section ----------------------------------------------------------->
@@ -151,32 +151,35 @@
 </section>
 
 <!---------------------------------------------------------------- EmailJS Script ---------------------------------------------------------------->
-
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
 <script>
-    (function () {
-        emailjs.init("-bQN0xF9wje-lqXdg"); 
-    })();
+  window.addEventListener("DOMContentLoaded", function () {
+    if (!window.emailjs) {
+      return;
+    }
+
+    emailjs.init("-bQN0xF9wje-lqXdg");
 
     document.getElementById("contact-form").addEventListener("submit", function (event) {
-        event.preventDefault();
+      event.preventDefault();
 
-        emailjs.send("service_831dpsq", "template_3ha39ld", {
-            from_name: document.getElementById("name").value,
-            from_email: document.getElementById("email").value,
-            phone_number: document.getElementById("number").value,
-            message: document.getElementById("message").value,
-        }).then(
-            function () {
-                alert("Message sent successfully!");
-                document.getElementById("contact-form").reset();
-            },
-            function (error) {
-                alert("Failed to send message. Please try again.");
-                console.log("Error:", error);
-            }
-        );
+      emailjs.send("service_831dpsq", "template_3ha39ld", {
+        from_name: document.getElementById("name").value,
+        from_email: document.getElementById("email").value,
+        phone_number: document.getElementById("number").value,
+        message: document.getElementById("message").value,
+      }).then(
+        function () {
+          alert("Message sent successfully!");
+          document.getElementById("contact-form").reset();
+        },
+        function (error) {
+          alert("Failed to send message. Please try again.");
+          console.log("Error:", error);
+        }
+      );
     });
+  });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 {% endblock %}

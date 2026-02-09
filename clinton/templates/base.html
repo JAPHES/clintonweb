@@ -10,47 +10,105 @@
 </head>
 <body>
     <!--------------------------------------------- Custom Navbar Styles -------------------------------------------------------->
-<style>
-    .page-content {
-    position: relative;
-    z-index: 1;
-}
-    .nav-custom {
-        font-size: 1.2rem;
-        font-weight: 600;
-        background: linear-gradient(45deg, #ff4b2b, black, #cd3232);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: white;
-        transition: 0.3s ease;
+    <style>
+        body {
+            background:
+                radial-gradient(1200px 600px at 10% 0%, rgba(255, 255, 255, 0.18), transparent 60%),
+                radial-gradient(900px 500px at 90% 10%, rgba(0, 0, 0, 0.08), transparent 60%),
+                radial-gradient(600px 400px at 30% 80%, rgba(0, 0, 0, 0.06), transparent 60%),
+                linear-gradient(180deg, #d3d6db 0%, #c2c6cc 45%, #b6bac1 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
         }
 
-    .nav-custom:hover {
-        opacity: 0.8;
-    }
-    .whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    z-index: 1000;
-    }
+        /* Animated liquid shapes that stay behind all content */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: -20vh -10vw;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(220px 220px at 12% 18%, rgba(120, 126, 135, 0.22), transparent 65%),
+                radial-gradient(260px 260px at 86% 24%, rgba(90, 95, 104, 0.2), transparent 65%),
+                radial-gradient(180px 180px at 36% 78%, rgba(140, 146, 156, 0.2), transparent 65%),
+                radial-gradient(220px 220px at 70% 72%, rgba(110, 116, 126, 0.2), transparent 65%),
+                radial-gradient(2px 2px at 10% 20%, rgba(0, 0, 0, 0.08), transparent 60%),
+                radial-gradient(2px 2px at 30% 40%, rgba(0, 0, 0, 0.08), transparent 60%),
+                radial-gradient(2px 2px at 55% 15%, rgba(0, 0, 0, 0.08), transparent 60%),
+                radial-gradient(2px 2px at 70% 60%, rgba(0, 0, 0, 0.08), transparent 60%),
+                radial-gradient(2px 2px at 85% 35%, rgba(0, 0, 0, 0.08), transparent 60%);
+            filter: blur(2px);
+            animation: liquid-drift 34s ease-in-out infinite;
+        }
 
-.whatsapp-float:hover {
-    background-color: #1ebe5d;
-}
+        /* Soft overlay to reduce brightness without muting text */
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.015) 0 2px, transparent 2px 6px),
+                linear-gradient(180deg, rgba(12, 14, 18, 0.14), rgba(12, 14, 18, 0.06));
+        }
 
+        .navbar,
+        .page-content,
+        footer {
+            position: relative;
+            z-index: 1;
+        }
 
-</style>
+        .nav-custom {
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: linear-gradient(45deg, #ff4b2b, black, #cd3232);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: white;
+            transition: 0.3s ease;
+        }
+
+        .nav-custom:hover {
+            opacity: 0.8;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1ebe5d;
+        }
+
+        @keyframes liquid-drift {
+            0% {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+            50% {
+                transform: translate3d(2%, -2%, 0) scale(1.03);
+            }
+            100% {
+                transform: translate3d(-2%, 2%, 0) scale(1);
+            }
+        }
+    </style>
     <!--------------------------------------------------- Navbar ------------------------------------------------------------------------------------->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <!----------------------------------------------- Brand ----------------------------------------------------------------------------------->
@@ -77,54 +135,50 @@
                 </li>
             </ul>
         </div>
-    </div>
-</nav>
-
-    <!-----------------------------------------------how background will look--------------------------->
-
-
+    </nav>
 
     <!-------------------------------------------------------- Page content ---------------------------------------------------------------------->
-   <main class="container my-5 page-content">
-    {% block content %}{% endblock %}
-   </main>
+    <main class="container my-5 page-content">
+        {% block content %}{% endblock %}
+    </main>
 
-    <!---------------------------------------------------------whatsaap icom------------------------------------------------->
-     <a href="https://wa.me/254700387730" target="_blank" class="whatsapp-float">
-         <i class="fab fa-whatsapp"></i>
-     </a>
+    <!--------------------------------------------------------- Whatsapp icon ------------------------------------------------->
+    <a href="https://wa.me/254700387730" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!--------------------------------------------------------- Footer ---------------------------------------------------------------------------->
-<footer class="bg-black text-white py-3 mt-auto">
-  <div class="container d-flex justify-content-between align-items-center">
-    <!------------------------------------------------- Left: Copyright ---------------------------------------------------------------------------->
-    <p class="mb-0">&copy; 2025 Clinton Munene. All Rights Reserved.</p>
+    <footer class="bg-black text-white py-3 mt-auto">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!----------------------------------------------- Left: Copyright -------------------------------------------------------------->
+            <p class="mb-0">&copy; 2025 Clinton Munene. All Rights Reserved.</p>
 
-    <!--------------------------------------- Right: Social Media Icons ---------------------------------------------------------------------------->
-    <div class="d-flex gap-3">
-      <a href="https://www.linkedin.com/in/clinton-munene?lipi=
-      urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B23y2eVN3Re2omNJl5UO9FQ%3D%3D" target="_blank" class="text-white">
-        <i class="bi bi-linkedin fs-5"></i>
-      </a>
-      <!------a href="https://instagram.com" target="_blank" class="text-white">
-        <i class="bi bi-instagram fs-5"></i>
-      </a-------->
-      <!------a href="https://tiktok.com" target="_blank" class="text-white">
-        <i class="bi bi-tiktok fs-5"></i>
-      </a-------->
-      <!------a href="https://twitter.com" target="_blank" class="text-white">
-        <i class="bi bi-twitter fs-5"></i>
-      </a------->
-      <!------a href="https://facebook.com" target="_blank" class="text-white">
-        <i class="bi bi-facebook fs-5"></i>
-      </a------->
-      <a href="https://github.com/Clinton-Analyst" target="_blank" class="text-white">
-        <i class="bi bi-github fs-5"></i>
-      </a>
-    </div>
-  </div>
-</footer>
-<!-- Bootstrap Icons $ js -->
+            <!-------------------------------------------- Right: Social Media Icons -------------------------------------------------------->
+            <div class="d-flex gap-3">
+                <a href="https://www.linkedin.com/in/clinton-munene?lipi=
+                urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B23y2eVN3Re2omNJl5UO9FQ%3D%3D"
+                   target="_blank" class="text-white">
+                    <i class="bi bi-linkedin fs-5"></i>
+                </a>
+                <!------a href="https://instagram.com" target="_blank" class="text-white">
+                    <i class="bi bi-instagram fs-5"></i>
+                </a-------->
+                <!------a href="https://tiktok.com" target="_blank" class="text-white">
+                    <i class="bi bi-tiktok fs-5"></i>
+                </a-------->
+                <!------a href="https://twitter.com" target="_blank" class="text-white">
+                    <i class="bi bi-twitter fs-5"></i>
+                </a------->
+                <!------a href="https://facebook.com" target="_blank" class="text-white">
+                    <i class="bi bi-facebook fs-5"></i>
+                </a------->
+                <a href="https://github.com/Clinton-Analyst" target="_blank" class="text-white">
+                    <i class="bi bi-github fs-5"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap Icons & JS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

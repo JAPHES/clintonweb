@@ -10,44 +10,72 @@
   .service-card {
     border-radius: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--surface);
+    border: 1px solid var(--surface-strong);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-elevated);
   }
   .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.35);
   }
   .counter-box {
-    background: #fff;
+    background: var(--surface);
+    border: 1px solid var(--surface-strong);
     border-radius: 15px;
     transition: 0.3s;
+    color: var(--text-primary);
+    box-shadow: var(--shadow-elevated);
   }
   .counter-box:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.4);
   }
   .cv-btn {
-    background: #0d6efd;
-    color: white;
+    background: var(--accent);
+    color: #fff;
     padding: 12px 25px;
-    border-radius: 6px;
+    border-radius: 10px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
+    border: none;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .cv-btn:hover {
-    background: #084298;
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(37, 211, 102, 0.4);
   }
 
+  .info-tile {
+    background-color: var(--surface);
+    border: 1px solid var(--surface-strong);
+    border-radius: 12px;
+    box-shadow: var(--shadow-elevated);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
 
+  .info-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+  }
 
-
-  
+  .accent-underline {
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent);
+    border: none;
+    margin: 0 auto;
+  }
 </style>
 <div class="container py-5">
   <div class="row align-items-center">
     <!-------------------------------------------------- Left Text Section -------------------------------------------------------->
     <div class="col-lg-6 mb-4 mb-lg-0">
       
-      <h5 class="fw-bold text-primary">Who am I?</h5>
+      <h5 class="fw-bold text-accent">Who am I?</h5>
       <p>
       Hi! I’m Clinton, a passionate Statistics professional with hands-on experience in analyzing data, building predictive models,
        and transforming complex information into clear insights .
@@ -95,18 +123,17 @@
 <section class="py-5">
   <div class="container text-center">
     <!---------------------------------------------------------------------- Section Title ------------------------------------------------------------------------------------------------------------------>
-    <h2 class="fw-bold mb-4" style="background: linear-gradient(45deg, #1e90ff, #ff1493); -webkit-background-clip: text;background-clip: text;
- -webkit-text-fill-color: transparent;">
+    <h2 class="fw-bold mb-4 text-accent">
       What I Do
     </h2>
-    <hr class="mx-auto mb-5" style="width: 60px; height: 3px; background-color: #f8c8dc; border: none;">
+    <hr class="mx-auto mb-5 accent-underline">
 
     <!-- Cards -->
     <div class="row g-4">
       <!------------------------------------------------------------ Statistical Analysis --------------------------------------------------------------------------------------------->
       <div class="col-md-4">
-        <div class="card shadow border-0 h-100 text-center p-4 service-card" style="background-color: azure;">
-          <div class="mb-3 text-warning fs-1">
+        <div class="card shadow border-0 h-100 text-center p-4 service-card">
+          <div class="mb-3 text-accent fs-1">
             <i class="bi bi-graph-up"></i>
 
           </div>
@@ -117,8 +144,8 @@
 
       <!---------------------------------------------------------- Data Visualization-------------------------------------------------------------------------------------------------- -->
       <div class="col-md-4">
-        <div class="card shadow border-0 h-100 text-center p-4 service-card" style="background-color: azure;">
-          <div class="mb-3 text-danger fs-1">
+        <div class="card shadow border-0 h-100 text-center p-4 service-card">
+          <div class="mb-3 text-accent fs-1">
             <i class="bi bi-bar-chart"></i>
 
           </div>
@@ -130,8 +157,8 @@
 
       <!------------------------------------------------- Machine Learning $ AI -------------------------------------------------------------->
       <div class="col-md-4">
-        <div class="card shadow border-0 h-100 text-center p-4 service-card" style="background-color: azure;">
-          <div class="mb-3 text-warning fs-1">
+        <div class="card shadow border-0 h-100 text-center p-4 service-card">
+          <div class="mb-3 text-accent fs-1">
             <i class="bi bi-robot"></i>
 
           </div>
@@ -144,27 +171,27 @@
     <!--------------------------------------------------- Counters ------------------------------------------------------------------------>
     <div class="row mt-5 g-4">
       <div class="col-md-3 col-6">
-        <div class="counter-box shadow-sm p-3 rounded" style="background-color: azure;">
-          <h3 class="text-danger fw-bold">1+</h3>
-          <p>Years Experience</p>
+        <div class="counter-box shadow-sm p-3 rounded">
+          <h3 class="text-accent fw-bold">1+</h3>
+          <p class="text-secondary mb-0">Years Experience</p>
         </div>
       </div>
       <div class="col-md-3 col-6">
-        <div class="counter-box shadow-sm p-3 rounded" style="background-color: azure;">
-          <h3 class="text-danger fw-bold">2+</h3>
-          <p>Programming Experience</p>
+        <div class="counter-box shadow-sm p-3 rounded">
+          <h3 class="text-accent fw-bold">2+</h3>
+          <p class="text-secondary mb-0">Programming Experience</p>
         </div>
       </div>
       <div class="col-md-3 col-6">
-        <div class="counter-box shadow-sm p-3 rounded" style="background-color: azure;">
-          <h3 class="text-danger fw-bold">20+</h3>
-          <p>Completed Projects</p>
+        <div class="counter-box shadow-sm p-3 rounded">
+          <h3 class="text-accent fw-bold">20+</h3>
+          <p class="text-secondary mb-0">Completed Projects</p>
         </div>
       </div>
       <div class="col-md-3 col-6">
-        <div class="counter-box shadow-sm p-3 rounded" style="background-color: azure;">
-          <h3 class="text-danger fw-bold">15+</h3>
-          <p>Clients Served</p>
+        <div class="counter-box shadow-sm p-3 rounded">
+          <h3 class="text-accent fw-bold">15+</h3>
+          <p class="text-secondary mb-0">Clients Served</p>
         </div>
       </div>
     </div>
@@ -173,8 +200,7 @@
 <!---------------------------------------------Resume section-------------------------------------------------------------------------------->
 <section class="py-5">
   <div class="container">
-    <h2 class="text-center fw-bold mb-5" style="background: linear-gradient(45deg, #6a11cb, #ff4b2b);background-clip: text;
- -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+    <h2 class="text-center fw-bold mb-5 text-accent">
       My Resume
     </h2>
     <div class="row g-4">
@@ -183,7 +209,7 @@
       <div class="col-md-4">
         <div class="card shadow-sm border-0 h-100">
           <div class="card-body">
-            <h5 class="card-title fw-bold text-white p-2 rounded" style="background: linear-gradient(45deg, #6a11cb, #ff4b2b);">Expertise</h5>
+            <h5 class="card-title fw-bold text-accent mb-3">Expertise</h5>
             
             <p><strong>2022 - 2022</strong><br>Data Scientist Attache --- National Treasury, Nairobi, Kenya</p>
             <p class="text-muted"><ul>Analyzed and tracked to prepare forecasts and identify trends</ul>
@@ -220,7 +246,7 @@
       <div class="col-md-4">
         <div class="card shadow-sm border-0 h-100">
           <div class="card-body">
-            <h5 class="card-title fw-bold text-white p-2 rounded" style="background: linear-gradient(45deg, #6a11cb, #ff4b2b);">Education</h5>
+            <h5 class="card-title fw-bold text-accent mb-3">Education</h5>
             
             <p><strong>2019 - 2022</strong><br>BSC Applied Statistics with Computing</p>
             <p class="text-muted">Comprehensive study of statistical methods, data analysis, probability, programming, and computational techniques, 
@@ -231,7 +257,7 @@
             training, and opportunities to build high-quality applications.</p>
             <hr>
             <p><strong>2015 - 2016</strong><br>High School Degree</p----------------->
-            <h5 class="card-title fw-bold text-white p-2 rounded mt-4" style="background: linear-gradient(45deg, #6a11cb, #ff4b2b);">Techniques</h5>
+            <h5 class="card-title fw-bold text-accent mt-4 mb-3">Techniques</h5>
             <ul class="list-unstyled">
               <li>Hypothesis Testing</li>
               <li>Regression</li>
@@ -248,28 +274,28 @@
       <div class="col-md-4">
         <div class="card shadow-sm border-0 h-100">
           <div class="card-body">
-            <h5 class="card-title fw-bold text-white p-2 rounded" style="background: linear-gradient(45deg, #6a11cb, #ff4b2b);">Skills/Tools</h5>
+            <h5 class="card-title fw-bold text-accent mb-3">Skills/Tools</h5>
             
             <p>SPSS</p>
-            <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 95%"></div></div>
+            <div class="progress mb-3"><div class="progress-bar" style="width: 95%; background-color: var(--accent);"></div></div>
             
             <p>R</p>
-            <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 80%"></div></div>
+            <div class="progress mb-3"><div class="progress-bar" style="width: 80%; background-color: var(--accent);"></div></div>
             
             <p>Python</p>
-            <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 75%"></div></div>
+            <div class="progress mb-3"><div class="progress-bar" style="width: 75%; background-color: var(--accent);"></div></div>
             
             <p>SQL</p>
-            <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 60%"></div></div>
+            <div class="progress mb-3"><div class="progress-bar" style="width: 60%; background-color: var(--accent);"></div></div>
             
             <p>Tableau</p>
-            <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 55%"></div></div>
+            <div class="progress mb-3"><div class="progress-bar" style="width: 55%; background-color: var(--accent);"></div></div>
             
             <p>Power BI</p>
-            <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 50%"></div></div>
+            <div class="progress mb-3"><div class="progress-bar" style="width: 50%; background-color: var(--accent);"></div></div>
 
             <p>Excel (Advanced)</p>
-            <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 50%"></div></div>
+            <div class="progress mb-3"><div class="progress-bar" style="width: 50%; background-color: var(--accent);"></div></div>
           </div>
         </div>
       </div>
@@ -280,10 +306,7 @@
 <!-- Contact Section -->
 <section id="contact" class="py-5">
   <div class="container text-center">
-    <h2 class="fw-bold mb-4" style="background: linear-gradient(90deg, #6a11cb, #2575fc); background-clip: text;
--webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-      Let's Work Together
-    </h2>
+    <h2 class="fw-bold mb-4 text-accent">Let's Work Together</h2>
     <p class="mb-5">
       Partner with me to bring your next project to life. I’ll combine creativity and expertise to turn your vision into reality!
     </p>
@@ -291,9 +314,8 @@
     <div class="row g-4 mb-4">
       <!-- Address -->
       <div class="col-md-4">
-        <div class="p-4 shadow rounded" style="background-color: aliceblue;">
-          <i class="bi bi-house-door-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc);background-clip: text;
- -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+        <div class="p-4 shadow rounded info-tile">
+          <i class="bi bi-house-door-fill text-accent" style="font-size: 2rem;"></i>
           <h5 class="mt-3">My Address</h5>
           <p>Nairobi, Kenya</p>
         </div>
@@ -301,9 +323,8 @@
 
       <!-- Phone -->
       <div class="col-md-4">
-        <div class="p-4 shadow rounded" style="background-color: aliceblue;">
-          <i class="bi bi-telephone-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc); background-clip: text;
--webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+        <div class="p-4 shadow rounded info-tile">
+          <i class="bi bi-telephone-fill text-accent" style="font-size: 2rem;"></i>
           <h5 class="mt-3">Give Me a Call</h5>
           <p>+254 700 387 730</p>
         </div>
@@ -311,9 +332,8 @@
 
       <!-- Email -->
       <div class="col-md-4">
-        <div class="p-4 shadow rounded" style="background-color: aliceblue;">
-          <i class="bi bi-envelope-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc);background-clip: text;
- -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+        <div class="p-4 shadow rounded info-tile">
+          <i class="bi bi-envelope-fill text-accent" style="font-size: 2rem;"></i>
           <h5 class="mt-3">Send Me an Email</h5>
           <p>clintontech20000@gmail.com</p>
         </div>
@@ -321,7 +341,7 @@
     </div>
 
     <!-- Chat Me Button -->
-    <!--a href="https://wa.me/254700387730" target="_blank" class="btn btn-lg text-white" style="background: linear-gradient(90deg, #6a11cb, #2575fc); border: none;">
+    <!--a href="https://wa.me/254700387730" target="_blank" class="btn btn-lg text-white" style="background: #25D366; border: none;">
       Whatsapp Me
     </a-->
 

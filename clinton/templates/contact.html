@@ -21,7 +21,7 @@
   }
 
   .projects h2 {
-    color: #2e2eff; 
+    color: var(--accent); 
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 5px;
@@ -29,17 +29,22 @@
 
   .projects hr {
     border: none;
-    border-top: 3px solid orange;
+    border-top: 3px solid var(--accent);
     width: 100%;
   }
-    .card {
+
+  .card {
     border-radius: 12px;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background: var(--surface);
+    border: 1px solid var(--surface-strong);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-elevated);
   }
 
   .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
   }
 
   .card-img-top {
@@ -50,8 +55,25 @@
   }
 
   .btn {
-    border-radius: 20px;
-    padding: 5px 15px;
+    border-radius: 10px;
+    padding: 8px 18px;
+  }
+
+  .form-label {
+    color: var(--text-secondary);
+  }
+
+  .form-control, textarea.form-control {
+    background-color: var(--surface);
+    border: 1px solid var(--surface-strong);
+    color: var(--text-primary);
+  }
+
+  .form-control:focus, textarea.form-control:focus {
+    background-color: var(--surface);
+    border-color: var(--accent);
+    color: var(--text-primary);
+    box-shadow: 0 0 0 0.2rem rgba(37, 211, 102, 0.15);
   }
 </style>
 
@@ -63,8 +85,8 @@
 
 <!------------------------------------------------------------------ Contact Section ----------------------------------------------------------->
 <section class="container my-5">
-    <h2 class="mb-4 text-center">Get In Touch!</h2>
-    <h6 class="mb-4 text-center"> Get in touch and relax and I will get in touch shortly too!</h6>
+    <h2 class="mb-4 text-center text-accent">Get In Touch!</h2>
+    <h6 class="mb-4 text-center text-secondary"> Get in touch and relax and I will get in touch shortly too!</h6>
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <form id="contact-form" class="row g-3">
@@ -106,8 +128,7 @@
 <!--------------------------------------------------------- Contact Section --------------------------------------------------------->
 <section id="contact" class="py-5">
   <div class="container text-center">
-    <h2 class="fw-bold mb-4" style="background: linear-gradient(90deg, #6a11cb, #2575fc); -webkit-background-clip: text;background-clip: text;
- -webkit-text-fill-color: transparent;">
+    <h2 class="fw-bold mb-4 text-accent">
       Let's Work Together
     </h2>
     <p class="mb-5">
@@ -117,9 +138,8 @@
     <div class="row g-4 mb-4">
       <!------------------------------------------------------ Address --------------------------------------------------------------->
       <div class="col-md-4">
-        <div class="p-4 shadow rounded" style="background-color: aliceblue;">
-          <i class="bi bi-house-door-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc); background-clip: text;
- -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+        <div class="p-4 shadow rounded surface">
+          <i class="bi bi-house-door-fill text-accent" style="font-size: 2rem;"></i>
           <h5 class="mt-3">My Address</h5>
           <p>Nairobi, Kenya</p>
         </div>
@@ -127,9 +147,8 @@
 
       <!------------------------------------------------------------ Phone ------------------------------------------------------------->
       <div class="col-md-4">
-        <div class="p-4 shadow rounded" style="background-color: aliceblue;">
-          <i class="bi bi-telephone-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc);background-clip: text;
- -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+        <div class="p-4 shadow rounded surface">
+          <i class="bi bi-telephone-fill text-accent" style="font-size: 2rem;"></i>
           <h5 class="mt-3">Give Me a Call</h5>
           <p>+254 700 387 730</p>
         </div>
@@ -137,9 +156,8 @@
 
       <!-------------------------------------------------------------- Email ---------------------------------------------------------------->
       <div class="col-md-4">
-        <div class="p-4 shadow rounded" style="background-color: aliceblue;">
-          <i class="bi bi-envelope-fill" style="font-size: 2rem; background: linear-gradient(90deg, #6a11cb, #2575fc); background-clip: text;
--webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+        <div class="p-4 shadow rounded surface">
+          <i class="bi bi-envelope-fill text-accent" style="font-size: 2rem;"></i>
           <h5 class="mt-3">Send Me an Email</h5>
           <p>clintontech2000@gmail.com</p>
         </div>

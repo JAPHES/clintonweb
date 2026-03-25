@@ -14,75 +14,148 @@
 <body>
     <!--------------------------------------------- Custom Navbar Styles -------------------------------------------------------->
     <style>
+        :root {
+            --bg: #121212;
+            --surface: #1f1f1f;
+            --surface-strong: #262626;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-muted: #808080;
+            --accent: #25D366;
+            --accent-dark: #1ebe5d;
+            --shadow-elevated: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --radius: 12px;
+            --transition: 0.3s ease;
+        }
+
         body {
-            background:
-                radial-gradient(1200px 600px at 10% 0%, rgba(255, 255, 255, 0.18), transparent 60%),
-                radial-gradient(900px 500px at 90% 10%, rgba(0, 0, 0, 0.08), transparent 60%),
-                radial-gradient(600px 400px at 30% 80%, rgba(0, 0, 0, 0.06), transparent 60%),
-                linear-gradient(180deg, #d3d6db 0%, #c2c6cc 45%, #b6bac1 100%);
+            background: radial-gradient(900px 500px at 15% 10%, rgba(37, 211, 102, 0.05), transparent 55%),
+                        radial-gradient(700px 400px at 85% 0%, rgba(37, 211, 102, 0.04), transparent 55%),
+                        linear-gradient(180deg, #121212 0%, #121212 100%);
+            color: var(--text-primary);
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
+            line-height: 1.7;
         }
 
-        /* Animated liquid shapes that stay behind all content */
-        body::before {
-            content: "";
-            position: fixed;
-            inset: -20vh -10vw;
-            z-index: 0;
-            pointer-events: none;
-            background:
-                radial-gradient(220px 220px at 12% 18%, rgba(120, 126, 135, 0.22), transparent 65%),
-                radial-gradient(260px 260px at 86% 24%, rgba(90, 95, 104, 0.2), transparent 65%),
-                radial-gradient(180px 180px at 36% 78%, rgba(140, 146, 156, 0.2), transparent 65%),
-                radial-gradient(220px 220px at 70% 72%, rgba(110, 116, 126, 0.2), transparent 65%),
-                radial-gradient(2px 2px at 10% 20%, rgba(0, 0, 0, 0.08), transparent 60%),
-                radial-gradient(2px 2px at 30% 40%, rgba(0, 0, 0, 0.08), transparent 60%),
-                radial-gradient(2px 2px at 55% 15%, rgba(0, 0, 0, 0.08), transparent 60%),
-                radial-gradient(2px 2px at 70% 60%, rgba(0, 0, 0, 0.08), transparent 60%),
-                radial-gradient(2px 2px at 85% 35%, rgba(0, 0, 0, 0.08), transparent 60%);
-            filter: blur(2px);
-            animation: liquid-drift 34s ease-in-out infinite;
-        }
-
-        /* Soft overlay to reduce brightness without muting text */
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            background:
-                repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.015) 0 2px, transparent 2px 6px),
-                linear-gradient(180deg, rgba(12, 14, 18, 0.14), rgba(12, 14, 18, 0.06));
-        }
-
-        .navbar,
-        .page-content,
-        footer {
+        .page-content {
             position: relative;
             z-index: 1;
         }
 
-        .nav-custom {
-            font-size: 1.2rem;
-            font-weight: 600;
-            background: linear-gradient(45deg, #ff4b2b, black, #cd3232);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: white;
-            transition: 0.3s ease;
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color var(--transition);
         }
 
-        .nav-custom:hover {
-            opacity: 0.8;
+        a:hover {
+            color: var(--accent-dark);
+        }
+
+        .navbar-custom {
+            background: var(--surface);
+            border-bottom: 1px solid var(--surface-strong);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .navbar-brand {
+            color: var(--text-primary) !important;
+        }
+
+        .nav-custom {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-secondary) !important;
+            transition: color var(--transition);
+        }
+
+        .nav-custom:hover,
+        .nav-custom:focus {
+            color: var(--accent) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: #ffffff;
+            border-radius: 10px;
+            transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.25);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: var(--accent-dark);
+            border-color: var(--accent-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-secondary {
+            background-color: var(--surface-strong);
+            border-color: var(--surface-strong);
+            color: var(--text-primary);
+            border-radius: 10px;
+            transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background-color: #2f2f2f;
+            color: var(--text-primary);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .card {
+            background-color: var(--surface);
+            border: 1px solid var(--surface-strong);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-elevated);
+            color: var(--text-primary);
+        }
+
+        .card .text-muted {
+            color: var(--text-muted) !important;
+        }
+
+        section {
+            background-color: transparent;
+            padding: 20px;
+        }
+
+        .surface {
+            background-color: var(--surface);
+            border: 1px solid var(--surface-strong);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .text-secondary {
+            color: var(--text-secondary) !important;
+        }
+
+        .text-accent {
+            color: var(--accent) !important;
+        }
+
+        hr {
+            border-color: var(--surface-strong);
+        }
+
+        footer {
+            background-color: #0d0d0d;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--surface-strong);
         }
 
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #25D366;
+            background-color: var(--accent);
             color: white;
             border-radius: 50%;
             width: 55px;
@@ -94,26 +167,16 @@
             text-decoration: none;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             z-index: 1000;
+            transition: background-color var(--transition), transform var(--transition);
         }
 
         .whatsapp-float:hover {
-            background-color: #1ebe5d;
-        }
-
-        @keyframes liquid-drift {
-            0% {
-                transform: translate3d(0, 0, 0) scale(1);
-            }
-            50% {
-                transform: translate3d(2%, -2%, 0) scale(1.03);
-            }
-            100% {
-                transform: translate3d(-2%, 2%, 0) scale(1);
-            }
+            background-color: var(--accent-dark);
+            transform: translateY(-2px);
         }
     </style>
     <!--------------------------------------------------- Navbar ------------------------------------------------------------------------------------->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <!----------------------------------------------- Brand ----------------------------------------------------------------------------------->
         <a class="navbar-brand fw-bold fst-italic" href="{% url 'home' %}" style="font-size: 1.8rem;">
             Clinton Munene
